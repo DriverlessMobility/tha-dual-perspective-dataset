@@ -7,9 +7,9 @@ RUN apt-get update -y
 RUN pip install --upgrade pip==23.2.1 setuptools==67.6.0 wheel==0.40.0
 WORKDIR ${HOME}
 RUN git clone https://github.com/dlengerer/CenterPointCustomData.git
-WORKDIR ${HOME}/CenterPoint
+WORKDIR ${HOME}/CenterPointCustomData
 RUN pip install -r requirements.txt
-ENV PYTHONPATH "$PYTHONPATH:/workspace/CenterPoint"
+ENV PYTHONPATH "$PYTHONPATH:/CenterPointCustomData"
 ENV PATH "$PATH:/usr/local/cuda-11.3/bin"
 ENV CUDA_PATH "/usr/local/cuda-11.3"
 ENV CUDA_HOME "/usr/local/cuda-11.3"
@@ -46,10 +46,10 @@ RUN bazel test waymo_open_dataset/metrics:all --test_verbose_timeout_warnings
 
 RUN bazel clean
 RUN bazel build waymo_open_dataset/metrics/tools/compute_detection_metrics_main
-RUN cp bazel-bin/waymo_open_dataset/metrics/tools/compute_detection_metrics_main /CenterPoint/compute_detection_metrics_main
+RUN cp bazel-bin/waymo_open_dataset/metrics/tools/compute_detection_metrics_main /CenterPointCustomData/compute_detection_metrics_main
 
 RUN pip install opencv-python==4.5.5.64
 
-WORKDIR $HOME/CenterPoint
+WORKDIR $HOME/CenterPointCustomData
 
 

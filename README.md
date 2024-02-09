@@ -12,9 +12,14 @@ docker build --tag centerpoint4feature .
 Next start a container and make sure to mount the datasets and the repository:
 
 ```
---volume /PATH/TO/WAYMO_DATASET_ROOT:/data/waymo-open \
---volume /PATH/TO/THA_DUALPERSPECTIVE_DATASET_ROOT:/data/THA_DualPerspective_Dataset \
---volume /PATH/TO/REPOSITORY_ROOT:/workspace \
+docker run --gpus all\
+        -it \
+        --network host \
+        --name dual-perspective \
+        --volume /PATH/TO/WAYMO_DATASET_ROOT:/data/waymo-open \
+        --volume /PATH/TO/THA_DUALPERSPECTIVE_DATASET_ROOT:/data/THA_DualPerspective_Dataset \
+        --volume /PATH/TO/REPOSITORY_ROOT:/workspace \
+        centerpoint4feature:latest
 ```
 
 ## Train
