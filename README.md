@@ -1,7 +1,16 @@
-# THA Dual-Perspective Dataset
-This repository provides the Dual-Perspective Dataset and code used in the paper "Transfer-Learning of a LiDAR Detection Algorithm Pre-Trained on Autonomous Driving Data for Roadside Infrastructure Application".
+<div align="center">
+  <h1>THA Dual-Perspective Dataset </h1>
+  
+  <h3> Transfer-Learning of a LiDAR Detection Algorithm Pre-Trained on Autonomous Driving Data for Roadside Infrastructure Application </h3>
+  
+  <a href="https://ieeexplore.ieee.org/document/10422207"><img src="https://img.shields.io/badge/IEEE%20Xplore-Paper-blue.svg" alt="IEEE Xplore Paper"></a>
+  <a href="https://huggingface.co/datasets/dlengerer/tha-dual-perspective-dataset/tree/main"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-HuggingFace-blue.svg" alt="Hugging Face Dataset"></a>
 
-Dataset Download: [here](https://l.linklyhq.com/l/1uGNk)
+</div>
+
+This repository provides the Dual-Perspective Dataset and code used in the work "Transfer-Learning of a LiDAR Detection Algorithm Pre-Trained on Autonomous Driving Data for Roadside Infrastructure Application".
+
+Dataset Download: [here](https://huggingface.co/datasets/dlengerer/tha-dual-perspective-dataset/tree/main)
 
 ## Environment Setup
 First build the docker image:
