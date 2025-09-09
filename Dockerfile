@@ -7,6 +7,7 @@ RUN apt-get update -y
 RUN pip install --upgrade pip==23.2.1 setuptools==67.6.0 wheel==0.40.0
 WORKDIR ${HOME}
 RUN git clone https://github.com/dlengerer/CenterPointCustomData.git
+RUN git clone https://github.com/DriverlessMobility/tha-dual-perspective-dataset.git
 WORKDIR ${HOME}/CenterPointCustomData
 RUN pip install -r requirements.txt
 ENV PYTHONPATH "$PYTHONPATH:/CenterPointCustomData"
@@ -49,6 +50,7 @@ RUN bazel build waymo_open_dataset/metrics/tools/compute_detection_metrics_main
 RUN cp bazel-bin/waymo_open_dataset/metrics/tools/compute_detection_metrics_main /CenterPointCustomData/compute_detection_metrics_main
 
 RUN pip install opencv-python==4.5.5.64
+RUN cp -r ${HOME}/tha-dual-perspective-dataset/* $HOME/CenterPointCustomData/
 
 WORKDIR $HOME/CenterPointCustomData
 
